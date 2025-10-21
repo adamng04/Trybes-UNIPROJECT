@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* === Global Styles === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", "Arial Narrow", Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* === Header === */
+header {
+    background: #fff;
+    border: 2px solid #4a46e5;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+}
+
+header .logo img {
+    max-width: 250px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #505050;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #a855f7;
+}
+
+/* === Main Section === */
+main {
+    background:
+        linear-gradient(to right, #4f46e5, #a855f7),
+        url("assets/images/background.jpg") center/cover no-repeat;
+    background-blend-mode: overlay;
+    color: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* === Burger Menu Styles === */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #4a46e5;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #a855f7;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.main-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 18px;
+    max-width: 500px;
+}
+
+/* === Typewriter Effect === */
+.typewriter {
+    border-right: 3px solid #fff;
+    padding-right: 5px;
+    background: linear-gradient(90deg, #ffffff, #a0e3ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        border-color: white;
+    }
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* === QR Code Placeholder === */
+.qr-code-placeholder {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === Footer === */
+footer {
+    background: #333;
+    color: #fff;
+    border-radius: 24px;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-left img {
+    max-width: 120px;
+    height: auto;
+}
+
+.footer-right address {
+    font-style: normal;
+    font-size: 14px;
+}
+
+footer i {
+    margin-right: 6px;
+}
+
+/* === Responsive Design === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    main {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .main-content h1 {
+        font-size: 36px;
+    }
+
+    .qr-code-placeholder {
+        width: 80%;
+        margin: 20px auto 0;
+    }
+}
+
+/* === Mobile View (≤768px) === */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Show the burger icon */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide nav initially */
+    nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 18px;
+        color: #4a46e5;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 8px 16px;
+        border-radius: 12px;
+        display: inline-block;
+        transition:
+            background 0.3s,
+            color 0.3s;
+    }
+
+    nav a:hover {
+        background: #4a46e5;
+        color: #fff;
+    }
+
+    /* Show nav when toggled */
+    nav.active {
+        display: flex;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .main-content h1 {
+        font-size: 28px;
+    }
+
+    .main-content p {
+        font-size: 16px;
+    }
+
+    .qr-code-placeholder {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+    }
+}
